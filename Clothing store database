@@ -1,0 +1,23 @@
+-- created a clothing store database
+
+create table store (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, quantity INTEGER);
+
+INSERT INTO store VALUES (1, "T-shirt", 15, 150);
+INSERT INTO store VALUES (2, "Pants", 35, 75);
+INSERT INTO store VALUES (3, "Shorts", 20 ,75);
+INSERT INTO store VALUES (4, "Socks", 10 , 75);
+INSERT INTO store VALUES (5, "Shoes", 79, 100);
+INSERT INTO store VALUES (6, "Watches", 100, 50);
+INSERT INTO store VALUES (7, "Underwear", 10, 75);
+INSERT INTO store VALUES (8, "Jacket", 150, 50); 
+INSERT INTO store VALUES (9, "Sweater", 90, 75); 
+INSERT INTO store VALUES (10, "Bags", 175, 40);
+
+-- displaying items sorted from least to most expensive. 
+select *
+from store
+order by price asc; 
+
+--What is the total price of all items?
+select sum(price)
+from store;
