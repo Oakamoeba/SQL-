@@ -1,0 +1,32 @@
+/* Create table about the people and what they do here */
+
+Create Table Fighters (
+    id integer primary key autoincrement,
+    fullname text, 
+    age integer,
+    wins integer);
+    
+    INSERT INTO fighters (fullname,age,wins) VALUES ("connor mcgregor", 34, 28);
+    INSERT INTO fighters (fullname,age,wins) VALUES ("jon jones", 35, 26); 
+    INSERT INTO fighters (fullname, age, wins) VALUES ("donald cerrone", 39, 36); 
+    INSERT INTO fighters (fullname, age, wins) VALUES ("mike bisping", 43, 30);
+    INSERT INTO fighters (fullname, age, wins) VALUES ("terrance mckinney", 27, 11); 
+
+
+Create Table Accolades (
+id integer primary key autoincrement, 
+fighter_id integer,
+champion text,
+division text);
+
+  INSERT INTO Accolades (fighter_id, champion, division) VALUES (1, "yes", "featherweight");
+    INSERT INTO Accolades (fighter_id, champion, division) VALUES (2, "yes", "lightheavyweight"); 
+    INSERT INTO Accolades(fighter_id, champion, division) VALUES (3, "No", "middleweight"); 
+    INSERT INTO Accolades (fighter_id, champion, division) VALUES (4, "yes", "middleweight");
+    INSERT INTO Accolades (fighter_id, champion, division) VALUES (5, "no", "lightweight"); 
+
+/* Return list of fighter and if they were champions or not */ 
+SELECT fighters.fullname, Accolades.champion
+FROM fighters
+JOIN accolades
+ON fighters.id = accolades.fighter_id;
